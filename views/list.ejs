@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/ba6343c5c6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="box" id="heading">
+    <h1><%=listTitle%></h1>
+  </div>
+
+  <div class="box" id="">
+
+    <%  listItems.forEach(i => {  %>
+      <form class="listItem" action="/remove" method="POST">
+        <div class="item">
+          <input type="checkbox">
+          <p> <%= i.name %> </p>
+          <button onclick="this.form.submit()" name="removeItem" value="<%= i._id %>"><i class="fas fa-trash"></i></button>
+        </div>
+        <input type="hidden" name="listName" value="<%= listTitle%>">
+      </form>
+    <%  })  %>
+
+    <form class="addItem" action="/" method="POST">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+      <button type="submit" name="list" value="<%= listTitle%>">+</button>
+    </form>
+
+  </div>
+
+
+</body>
+
+</html>
