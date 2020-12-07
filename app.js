@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 require('dotenv').config();
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -160,4 +160,4 @@ app.get('/:customListName', (req, res) => {
 
 
 // Start Server
-app.listen(PORT, () => console.log(`App listening on port 3000!`))
+app.listen(port, () => console.log(`Server has started!`))
