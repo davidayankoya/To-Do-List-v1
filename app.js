@@ -17,7 +17,7 @@ app.use(express.static(`${__dirname}/public`))
 
 
 // Mongoose
-mongoose.connect(`mongodb+srv://davidayankoya:${process.env.PW}@cluster0.2napv.mongodb.net/todoListDB?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://davidayankoya:ajuwasegun23@cluster0.2napv.mongodb.net/todoListDB?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
